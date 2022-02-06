@@ -1,0 +1,63 @@
+{
+  "name": "wovoschool/laravel-menus",
+  "description": "Laravel Menu management",
+  "keywords": [
+    "laravel",
+    "menus",
+    "navigation",
+    "nav",
+    "bootstrap"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Bishwajit Adhikary",
+      "email": "bishwajitcadhikary@gmail.com"
+    },
+    {
+      "name": "Nicolas Widart",
+      "email": "n.widart@gmail.com"
+    },
+    {
+      "name": "Pingpong Labs",
+      "email": "pingpong.labs@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.3",
+    "illuminate/support": "^8.0",
+    "illuminate/config": "^8.0",
+    "illuminate/view": "^8.0",
+    "laravelcollective/html": "6.2.*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.5",
+    "mockery/mockery": "~1.0",
+    "orchestra/testbench": "^6.2",
+    "friendsofphp/php-cs-fixer": "^2.16"
+  },
+  "autoload": {
+    "psr-4": {
+      "WovoSchool\\Menus\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "WovoSchool\\Menus\\Tests\\": "Tests"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "6.0-dev"
+    },
+    "laravel": {
+      "providers": [
+        "WovoSchool\\Menus\\MenusServiceProvider"
+      ],
+      "aliases": {
+        "Menu": "WovoSchool\\Menus\\Facades\\Menu"
+      }
+    }
+  },
+  "minimum-stability": "stable"
+}
