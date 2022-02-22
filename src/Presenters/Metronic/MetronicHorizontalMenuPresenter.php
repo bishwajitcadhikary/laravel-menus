@@ -106,21 +106,18 @@ class MetronicHorizontalMenuPresenter extends Presenter
 
     public function getMultiLevelDropdownWrapper($item): string
     {
-        return '<li class="m-menu__item  m-menu__item--submenu"  data-menu-submenu-toggle="hover" data-redirect="true" aria-haspopup="true">
-                            <a  href="#" class="m-menu__link m-menu__toggle">
-                                ' . $item->getIcon() . '
-                                <span class="m-menu__link-text">
-                                    ' . $item->title . '
-                                </span>
-                                <i class="m-menu__hor-arrow la la-angle-right"></i>
-                                <i class="m-menu__ver-arrow la la-angle-right"></i>
-                            </a>
-                            <div class="m-menu__submenu m-menu__submenu--classic m-menu__submenu--right">
-                                <span class="m-menu__arrow m-menu__arrow--adjust"></span>
-                                <ul class="m-menu__subnav">
-                                    ' . $this->getChildMenuItems($item) . '
-                                </ul>
-                            </div>
-                        </li>' . PHP_EOL;
+        return PHP_EOL.
+            '<div data-kt-menu-trigger="click" class="menu-item '.$this->getActiveStateFromChild($item).' menu-accordion">
+                <span class="menu-link">
+                    <span class="menu-bullet">
+                        <span class="bullet bullet-dot"></span>
+                    </span>
+                    <span class="menu-title">'.$item->title.'</span>
+                    <span class="menu-arrow"></span>
+                </span>
+                <div class="menu-sub menu-sub-accordion menu-active-bg">
+                     ' . $this->getChildMenuItems($item) . '
+                </div>
+            </div>' . PHP_EOL;
     }
 }
